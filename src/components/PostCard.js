@@ -27,7 +27,7 @@ function PostCard(props) {
             </Card.Content>
             <Card.Content extra>
                 {
-                    (user && user.username !== username || !user) &&
+                    ((user && user.username !== username) || !user) &&
                     <LikeButton post={{ id, likes }} />
                 }
                 <Button labelPosition='right' as={Link} to={`/posts/${id}`}>

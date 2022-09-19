@@ -6,13 +6,13 @@ import { useMutation } from '@apollo/client';
 import { FETCH_POSTS_QUERY } from '../util/graphql';
 
 function PostForm(props) {
-    const { values, setValues, onChange, onSubmit } = useForm(createPost, {
+    const { values, onChange, onSubmit } = useForm(createPost, {
         body: ''
     });
     const [errorMessage, setErrorMessage] = useState({});
 
 
-    const [create, { error, loading }] = useMutation(CREATE_POST, {
+    const [create, { error }] = useMutation(CREATE_POST, {
         update(proxy, result) {
             const data = proxy.readQuery({
                 query: FETCH_POSTS_QUERY
