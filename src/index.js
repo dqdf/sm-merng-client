@@ -13,7 +13,7 @@ const setAuthorizationLink = setContext((gqlRequest, previousContext) => {
 });
 
 const httpLink = new HttpLink({
-  uri: 'http://localhost:5000',
+  uri: 'https://sm-merng-server.onrender.com',
 
 });
 const client = new ApolloClient({
